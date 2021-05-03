@@ -1,0 +1,19 @@
+<form action="/restaurants" method="post">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name">
+  <label for="city">City</label>
+  <input type="text" id="city" name="city">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+<%# Not part of solution, but you can also see params like this %>
+<%# on a specific page %>
+<%= params %>
